@@ -1,0 +1,34 @@
+package cs311_anagrams;
+
+import java.util.Arrays;
+
+public final class AnagramUtils {
+	
+	/***
+	 * Uses counting sort to alphabetically sort any possible ascii string
+	 * 
+	 * @param str
+	 * @return
+	 */
+	public static final String sortString(String str) {
+		char[] str_array= str.toCharArray();
+
+		char[] retArr = new char[str_array.length];
+
+		int[] count = new int[256];
+		Arrays.fill(count, 0);
+		
+		for (int i = 0; i < str_array.length; i++)
+			count[str_array[i]] ++;
+
+		for (int i = 1; i < 256; i++)
+			count[i] += count[i - 1];
+		
+		for (int i = 0; i < str_array.length; i++) {
+			retArr[count[str_array[i]] - 1] = str_array[i];
+			count[str_array[i]] --;
+		}
+		
+		return new String(retArr);
+	}
+}

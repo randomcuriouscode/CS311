@@ -1,0 +1,23 @@
+package cs311_anagrams;
+
+import java.util.List;
+
+public class AnagramClassNodeData implements Comparable<AnagramClassNodeData>{
+	private String tag; //sorted string representing the exact lexicographically ordered anagram string, may/not be a member
+	private List<String> members;
+	
+	
+	@Override
+	public int compareTo(AnagramClassNodeData o) {
+		// TODO Auto-generated method stub
+		return this.getTag().compareTo(o.getTag());
+	} 
+	
+	public String getTag(){
+		return this.tag;
+	}
+	
+	public void addMember(String member){
+		this.members.add(member);
+	}
+}

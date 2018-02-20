@@ -1,0 +1,65 @@
+package cs311_anagrams;
+
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+
+public class AnagramClassNode implements Comparable<String>{
+	private String tag; //sorted string representing the exact lexicographically ordered anagram string, may/not be a member
+	private List<String> members; 
+	private AnagramClassNode leftChild = null;
+	private AnagramClassNode rightChild = null;
+	
+	public void setLeftChild(AnagramClassNode c){
+		this.leftChild = c;
+	}
+	
+	public AnagramClassNode getLeftChild(){
+		return this.leftChild;
+	}
+	
+	public void setRightChild(AnagramClassNode c){
+		this.rightChild = c;
+	}
+	
+	public AnagramClassNode getRightChild(){
+		return this.rightChild;
+	}
+	
+	public boolean hasLeftChild() {
+		return this.getLeftChild() != null;
+	}
+	
+	public boolean hasRightChild() {
+		return this.getRightChild() != null;
+	}
+	
+	public AnagramClassNode(String tag){
+		this.tag = tag;
+		this.members = new LinkedList<String>();
+	}
+	
+	public String getTag(){
+		return this.tag;
+	}
+	
+	public void addMember(String member){
+		this.members.add(member);
+	}
+	
+	
+	
+	@Override
+	public String toString(){
+		StringBuffer sb = new StringBuffer();
+		Iterator<String> iter = members.iterator();
+		
+		while(iter.hasNext()){
+			sb.append(iter.next());
+			if(iter.hasNext())
+				sb.append(" ");
+		}
+		
+		return sb.toString();
+	}
+}

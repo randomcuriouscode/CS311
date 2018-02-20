@@ -1,0 +1,14 @@
+package cs311_anagrams;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class AnagramClass {
+	private String tag;
+	private List members;
+	
+	public AnagramClass(String tag){
+		this.tag = tag;
+		this.members = new LinkedList<String>();
+	}
+}

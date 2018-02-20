@@ -1,0 +1,27 @@
+package cs311_anagrams;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		try {
+			Scanner s = new Scanner(new File(args[0]));
+			AnagramBST tree = new AnagramBST();
+			
+			while(s.hasNext()){
+				String readString = s.nextLine().trim();
+				tree.addMember(AnagramUtils.sortString(readString), readString);
+			}
+			
+			tree.dump();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}		
+		
+	}
+
+}

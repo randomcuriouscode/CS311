@@ -1,0 +1,11 @@
+Dict 1 time on elnux1:
+
+real	0m2.233s
+user	0m1.904s
+sys	0m0.480s
+
+Dict 2 time on elnux1:
+
+real	0m58.443s
+user	1m48.003s
+sys	0m3.756s

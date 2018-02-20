@@ -1,0 +1,16 @@
+Computer: elnux.cs.umass.edu
+
+smallgraph:
+		real	0m0.139s
+		user	0m0.104s
+		sys	0m0.032s
+
+largegraph1:
+		real	0m5.108s
+		user	0m12.037s
+		sys	0m0.808s
+
+largegraph2:
+		real	0m3.357s
+		user	0m10.681s
+		sys	0m0.456s

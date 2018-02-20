@@ -1,0 +1,34 @@
+package cs311_anagrams;
+
+import java.util.Arrays;
+
+public final class AnagramUtils {
+	public static final String sortString(String str) {
+		char[] str_array= str.toCharArray();
+
+		// The output character array that will have sorted arr
+		char output[] = new char[str_array.length];
+
+		// Create a count array to store count of inidividul
+		// characters and initialize count array as 0
+		int count[] = new int[256];
+		Arrays.fill(count, 0);
+
+		// store count of each character
+		for (int i = 0; i < str_array.length; i++)
+			count[str_array[i]]++;
+
+		// Change count[i] so that count[i] now contains actual
+		// position of this character in output array
+		for (int i = 1; i < 256; i++)
+			count[i] += count[i - 1];
+
+		// Build the output character array
+		for (int i = 0; i < str_array.length; ++i) {
+			output[count[str_array[i]] - 1] = str_array[i];
+			count[str_array[i]] --;
+		}
+		
+		return new String(output);
+	}
+}

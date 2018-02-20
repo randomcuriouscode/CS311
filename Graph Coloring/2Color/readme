@@ -1,0 +1,1 @@
+"java -Xss512m -jar 2Color.jar [input graph]"

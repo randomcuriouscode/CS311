@@ -1,0 +1,49 @@
+package cs311_anagrams;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
+
+public class AnagramBST {
+	private class NotFoundException extends Exception {}
+	
+	private AnagramClassNode root; //root will contain empty tag as sentinel
+	
+	public AnagramBST()
+	{
+		this.root = new AnagramClassNode("");
+	}
+	
+	public void addNode(AnagramClassNode n){
+		
+	}
+	
+	public void removeNode(String tag){
+		
+	}
+	
+	/***
+	 * Searches tree for tag
+	 * @param tag
+	 * @return found node for tag, null if not found
+	 */
+	public AnagramClassNode searchNode(String tag) {
+		
+	}
+	
+	/***
+	 * Dumps entire tree to std out, skipping the root as it is a sentinel
+	 */
+	public void dump(){
+		p_inOrderPrint(root.getLeftChild());
+		p_inOrderPrint(root.getRightChild());
+	}
+	
+	private void p_inOrderPrint(AnagramClassNode root){
+		if ( root != null ) {  
+			p_inOrderPrint(root.getLeftChild());
+			System.out.print(root.toString()); 
+			p_inOrderPrint(root.getRightChild()); 
+		}
+	}
+}

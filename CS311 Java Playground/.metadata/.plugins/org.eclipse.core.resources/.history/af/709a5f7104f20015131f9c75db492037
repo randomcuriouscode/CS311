@@ -1,0 +1,37 @@
+package cs311_anagrams;
+
+import java.util.Arrays;
+
+public final class AnagramUtils {
+	
+	/***
+	 * Uses counting sort to alphabetically sort any possible ascii string
+	 * 
+	 * Note: java characters are 2 bytes and can represent utf-16 characters.
+	 * It is assumed that only ascii characters will be in the string.
+	 * 
+	 * @param str
+	 * @return
+	 */
+	public static final String sortString(String str) {
+		char[] str_array= str.toCharArray();
+
+		char[] retArr = new char[str_array.length];
+
+		int[] ctArr = new int[256];
+		Arrays.fill(ctArr, 0);
+		
+		for (int i = 0; i < str_array.length; i++)
+			ctArr[str_array[i]] ++;
+
+		for (int i = 1; i < 256; i++)
+			ctArr[i] += ctArr[i - 1];
+		
+		for (int i = 0; i < str_array.length; i++) {
+			retArr[ctArr[str_array[i]] - 1] = str_array[i];
+			ctArr[str_array[i]] --;
+		}
+		
+		return new String(retArr);
+	}
+}

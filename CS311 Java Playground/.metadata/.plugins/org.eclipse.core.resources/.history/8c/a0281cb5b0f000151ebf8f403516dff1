@@ -1,0 +1,43 @@
+package cs311_anagrams;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
+
+public class AnagramCollection {
+	private class NotFoundException extends Exception {}
+	
+	private AnagramClassNode root;
+	
+	public AnagramCollection()
+	{
+		this.root = new AnagramClassNode("");
+	}
+	
+	public void addNode(AnagramClassNode n){
+		
+	}
+	
+	public void removeNode(String tag){
+		
+	}
+	
+	/***
+	 * Searches tree for tag
+	 * @param tag
+	 * @return found node for tag, null if not found
+	 */
+	public AnagramClassNode searchNode(String tag) {
+		
+	}
+	
+	/***
+	 * Dump the collection to target filename
+	 * @throws IOException if filename is invalid
+	 */
+	public void dumpCollection(String filename) throws IOException{
+		try(FileWriter writer = new FileWriter(filename)){
+			
+		}		
+	}
+}
